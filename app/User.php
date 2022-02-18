@@ -27,4 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function scopePatients($query)
+    {
+     $query->where('role', 'patient');
+    }
+
+    public function scopeDoctors($query)
+    {
+     $query->where('role', 'doctor');
+    }
 }
