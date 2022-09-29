@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Appointment;
 
 use App\Http\Requests\StoreAppointment;
 
@@ -40,7 +41,8 @@ class AppointmentController extends Controller
 
     public function store(StoreAppointment $request)
     {
-        $success = Appointment::createForPatient($request, auth()->id());
+        $patientId = Auth::guard('api')->id();
+        $success = Appointment::createForPatient($request, $patientId);
         return compact('success');
     }
 }
