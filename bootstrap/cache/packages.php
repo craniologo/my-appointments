@@ -13,6 +13,17 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
+  'kawankoding/laravel-fcm' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Kawankoding\\Fcm\\FcmServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Fcm' => 'Kawankoding\\Fcm\\FcmFacade',
+    ),
+  ),
   'laravel/nexmo-notification-channel' => 
   array (
     'providers' => 
