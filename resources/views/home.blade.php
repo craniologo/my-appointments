@@ -56,8 +56,8 @@
       <div class="card-header bg-transparent">
         <div class="row align-items-center">
           <div class="col">
-            <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-            <h2 class="mb-0">Total orders</h2>
+            <h6 class="text-uppercase text-muted ls-1 mb-1">Total de citas</h6>
+            <h2 class="mb-0">Según día de la semana</h2>
           </div>
         </div>
       </div>
@@ -71,4 +71,11 @@
   </div>
   @endif
 </div>
+@endsection
+
+@section('scripts')
+  <script>
+    const appointmentsByDay = @json($appointmentsByDay);
+  </script>
+  <script src="{{ asset('js/charts/home.js') }}"></script>
 @endsection
