@@ -45,7 +45,7 @@ class StoreAppointment extends FormRequest
 
             $start = new Carbon($scheduled_time);
 
-            if (!$this->$scheduleService->isAvailableInterval($date, $doctorId, $start)) {
+            if (!$this->scheduleService->isAvailableInterval($date, $doctorId, $start)) {
                 $validator->errors()
                     ->add('available_time', 'La hora seleccionada ya se encuentra reservada por otro paciente.');
             }
